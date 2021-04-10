@@ -48,8 +48,15 @@ public class FollowPath : MonoBehaviour
         //ao terminar, define o ponto como 0
         currentWP = 0;
     }
+    public void GoToFabrica()
+    {
+        //pega o metodo do graph, onde é passado o ponto atual e o ponto final
+        g.AStar(currentNode, wps[10]);
+        //ao terminar, define o ponto como 0
+        currentWP = 0;
+    }
 
-void LateUpdate()
+    void LateUpdate()
     {
         //se o caminho tiver finalizado, ele é zerado
         if (g.getPathLength() == 0 || currentWP == g.getPathLength())
